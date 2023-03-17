@@ -1,0 +1,26 @@
+// 计算购物车金额
+function sum(list){
+    var total = 0
+    // 遍历购物车列表
+    for(var i =0;i<list.length;i++){
+        if(list[i].checked){
+            // 该商品被选中
+            total+=list[i].good.price*list[i].number
+        }
+    }
+    return total
+}
+
+function check(list){
+    if(list.length===0) return false
+    // 购物车中每个商品必须都被选中，返回值才是ture，这样全选才能勾选
+    return list.every(function(item){
+        return item.checked===true
+    })
+}
+
+// 导出方法
+module.exports={
+    sum:sum,
+    check:check
+}

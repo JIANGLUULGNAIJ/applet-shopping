@@ -1,0 +1,2 @@
+<!--pages/search/search.wxml-->
+<mp-searchbar bindselectresult="selectresult" search="{{search}}"></mp-searchbar>

@@ -1,0 +1,50 @@
+<!--pages/detail/detail.wxml-->
+<swiper>
+    <swiper-item wx:for="{{info.slides}}" wx:key="index">
+    <!-- mode参数使长边完全显示 -->
+        <image src="http://localhost:3000{{item}}" mode="aspectFit" 
+        bindtap="handleTap" data-current="http://localhost:3000{{item}}"></image>
+    </swiper-item>
+</swiper>
+
+<mp-sticky>
+    <view class="detailTabbar">
+        <view class="{{current===0?'active':''}}" data-index="{{0}}" bindtap="handleActive">商品详情</view>
+        <view class="{{current===1?'active':''}}" data-index="{{1}}" bindtap="handleActive">用户评价</view>
+    </view>
+</mp-sticky>
+
+
+<!-- 商品详情 -->
+<view wx:if="{{current===0}}">
+    <view style="color: gray;">{{info.feature}}</view>
+    <view wx:for="{{info.desc}}" wx:key="index">
+        <image src="{{item}}" mode="widthFix" style="width: 100%;"></image>
+    </view>
+</view>
+
+<!-- 用户评价 -->
+<view wx:else>
+    <view wx:for="{{commentList}}" wx:key="index" style="border-bottom: 2px solid grey;">
+    <view class="user">
+        <image class="left" src="http://localhost:3000{{item.userImageUrl}}" mode="widthFix" ></image>
+        <view class="left">{{item.nickname}}</view>
+        <view class="right">{{item.creationTime}}</view>
+    </view>
+
+    <view class="content">
+        <view>{{item.content}}</view>
+    </view>
+
+    <view class="content">
+        <image src="http://localhost:3000{{item.imgUrl}}" mode="widthFix"></image>
+    </view>
+    
+    </view>
+</view>
+
+<!-- 底部购物车 -->
+<view class="bottom">
+    <view style="background: rgb(71, 212, 118);" bindtap="handleChange">跳转购物车</view>
+    <view style="background: rgb(43, 187, 231);" bindtap="handleAdd">加入购物车</view>
+</view>

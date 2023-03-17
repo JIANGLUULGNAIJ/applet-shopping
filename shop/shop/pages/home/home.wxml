@@ -1,0 +1,27 @@
+<!--pages/home/home.wxml-->
+
+<!-- 轮播图 -->
+<swiper indicator-dots="{{true}}">
+    <swiper-item wx:for="{{comlist}}" wx:key="index">
+        <image src="http://localhost:3000{{item.url}}" mode="widthFix"></image>
+    </swiper-item>
+</swiper>
+
+<!-- 搜索框 -->
+<mp-sticky>
+    <view style="width:100vw;">
+        <JL-Search bindEvent="handleEvent"></JL-Search>
+    </view>
+</mp-sticky>
+
+
+<!-- 列表数据 -->
+<view wx:for="{{goodslist}}" wx:key="index" class="goodbox" bindtap="handleChangePage" data-id="{{item.id}}"
+data-title="{{item.title}}">
+    <image src="http://localhost:3000{{item.poster}}" mode="widthFix"></image>
+    <view>
+        <view>{{item.title}}</view>
+        <view style="color: red;">价格：￥{{item.price}}</view>
+        <view>好评率：{{item.goodcomment}}</view>
+    </view> 
+</view>

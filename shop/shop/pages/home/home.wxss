@@ -1,0 +1,22 @@
+/* pages/home/home.wxss */
+
+swiper image{
+    width: 100%;
+}
+
+swiper{
+    height: 296rpx;
+}
+
+.goodbox{
+    padding: 10rpx;
+    /* 清除浮动，子元素脱离文档流，父元素无法根据子元素自适应高度，所以清除之后就可以了 */
+    overflow: hidden;
+}
+
+.goodbox image{
+    width: 200rpx;
+    /* 左浮动，脱离标准文档流，块级元素可以在一行 */
+    float: left;
+}
+

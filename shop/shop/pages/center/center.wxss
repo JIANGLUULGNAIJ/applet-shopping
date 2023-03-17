@@ -1,0 +1,12 @@
+/* pages/center/center.wxss */
+
+.user{
+    background-color: #14c145;
+    text-align: center;
+}
+
+.user image{
+        width: 200rpx;
+        height: 200rpx;
+        border-radius: 100rpx;
+}

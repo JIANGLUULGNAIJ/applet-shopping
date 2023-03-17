@@ -1,0 +1,75 @@
+/* pages/detail/detail.wxss */
+
+swiper{
+    height: 200px;
+}
+
+swiper image{
+    width: 100%;
+    height: 200px;
+}
+
+.detailTabbar{
+    height: 100rpx;
+    width: 100vw;
+    line-height:100rpx ;
+    text-align: center;
+    display: flex;
+    background-color: white;
+}
+
+.detailTabbar view{
+    /* 放大项目，默认为0，不放大，若所有项目为1，则等分剩余空间 */
+    flex: 1;
+}
+
+.detailTabbar .active{
+    border-bottom:3rpx solid red;
+}
+
+.user{
+    overflow: hidden;
+    padding: 10rpx;
+}
+
+.user image{
+    width: 100rpx;
+    border-radius: 50%;
+}
+
+.user .left{
+    float: left;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.user .right{
+    float: right;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.content{
+    padding: 20rpx;
+}
+
+.content image{
+    width: 200rpx;
+}
+
+.bottom{
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    text-align: center;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bottom view{
+    flex:1;
+    color: white;
+}
